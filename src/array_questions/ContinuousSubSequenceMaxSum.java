@@ -1,4 +1,4 @@
-package aray_questions;
+package array_questions;
 
 public class ContinuousSubSequenceMaxSum {
 
