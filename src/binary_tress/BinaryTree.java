@@ -13,6 +13,8 @@ public class BinaryTree {
 		root.right.left = new BinaryNode(3);
 		root.right.right = new BinaryNode(9);
 		
+		root.right.left.left = new BinaryNode(12);
+		
 		return root;
 	}
 }
