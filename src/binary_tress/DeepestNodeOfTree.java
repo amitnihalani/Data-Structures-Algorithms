@@ -3,38 +3,23 @@ package binary_tress;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class HeightOfTree {
+public class DeepestNodeOfTree {
 
 	public static void main(String[] args) {
-		
 		BinaryNode root = BinaryTree.generateRandomBinaryTree();
 		System.out.println("\nOriginal Tree\n");
 		root.left.left.left = new BinaryNode(10);
 		root.left.left.left.right = new BinaryNode(15);
 		LevelOrderTraversal.printLevelOrderTraversal(root);
-		System.out.println("\n \nHeight of tree  found using RECURSION is: " + heightOfTree(root));
-		System.out.println("\n \nHeight of tree  found using LEVEL ORDER TRAVERSAL is: " + heightOfTreeUsingLevelOrder(root));
+		System.out.println("\n \nDeepest node in the tree: " + deepestNodeUsingLevelOrder(root).value);
 	}
 	
-	private static int heightOfTree(BinaryNode root) {
-		
-		if(root==null) {
-			return 0;
-		}
-
-		int left = heightOfTree(root.left);
-		int right = heightOfTree(root.right);
-		int max = (left>right? left:right);
-		// height of left/right subtree + 1 for the node itself
-		return max+1;
-	}
-
-	private static int heightOfTreeUsingLevelOrder(BinaryNode root) {
+	private static BinaryNode deepestNodeUsingLevelOrder(BinaryNode root) {
 		Queue<BinaryNode> q = new LinkedList<BinaryNode>();
-		int level=1;
+		BinaryNode deepestNode = null;
 			// return if root is null
 			if(root == null){
-				return 0;
+				return null;
 			}// else add root to the queue
 			q.add(root);
 			q.add(null);
@@ -48,13 +33,14 @@ public class HeightOfTree {
 					if(node.left!=null) {
 						q.add(node.left);
 					}
+					deepestNode = node;
 				} else {
 					if(!q.isEmpty()){
 						q.add(null);
-						level++;
 					}
 				}
 			}
-		return level;
+		return deepestNode;
 	}
+
 }
