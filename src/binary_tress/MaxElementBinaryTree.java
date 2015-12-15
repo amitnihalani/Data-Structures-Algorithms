@@ -36,6 +36,7 @@ public class MaxElementBinaryTree {
 		return max;
 	}
 	
+	
 	// Returns max element without recursion
 	private static int returnMaxElementIterative(BinaryNode root) {
 		int max = Integer.MIN_VALUE;

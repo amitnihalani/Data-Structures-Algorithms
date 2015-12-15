@@ -6,7 +6,6 @@ import java.util.Queue;
 public class LevelOrderTraversal {
 
 	public static void printLevelOrderTraversal(BinaryNode root) {
-		BinaryNode current = root;
 		Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
 		if (root == null) {
 			System.out.println("The tree is Empty");

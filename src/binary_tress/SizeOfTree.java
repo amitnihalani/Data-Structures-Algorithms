@@ -40,15 +40,13 @@ public class SizeOfTree {
 		return count;
 	}
 	
+	
 	private static int calculateTreeSizeRecursive(BinaryNode root) {
-		if(root == null){
+		if(root == null) {
 			return 0;
 		}
+		return (calculateTreeSizeRecursive(root.left) + calculateTreeSizeRecursive(root.right) + 1);
 
-		int left = calculateTreeSizeRecursive(root.left);
-		int right = calculateTreeSizeRecursive(root.right);
-
-		return left+right+1;
 	}
 	
 }

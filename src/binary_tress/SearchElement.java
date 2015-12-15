@@ -22,23 +22,37 @@ public class SearchElement {
 	}
 	
 	//return true if element is found in tree  - RECURSIVE Solution
+//	private static boolean searchElement(BinaryNode root, int val) {
+//		if(root==null){
+//			return false;
+//		}
+//		
+//		boolean left = searchElement(root.left, val);
+//		boolean right = searchElement(root.right, val);
+//		
+//		if(root.value == val){
+//			return true;
+//		}
+//		
+//		if(left||right){
+//			return true;
+//		} else {
+//			return false;
+//		}
+//	}
+	
+	//return true if element is found in tree  - RECURSIVE Solution
 	private static boolean searchElement(BinaryNode root, int val) {
-		if(root==null){
+		if(root == null) {
 			return false;
 		}
-		
-		boolean left = searchElement(root.left, val);
-		boolean right = searchElement(root.right, val);
-		
-		if(root.value == val){
+
+		if(root.value == val) {
 			return true;
 		}
-		
-		if(left||right){
-			return true;
-		} else {
-			return false;
-		}
+
+		return (searchElement(root.left, val) ||  searchElement(root.right, val));
+
 	}
 	
 	//Return true if element is found - ITERATIVE solution

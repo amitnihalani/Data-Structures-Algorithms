@@ -16,17 +16,26 @@ public class HeightOfTree {
 		System.out.println("\n \nHeight of tree  found using LEVEL ORDER TRAVERSAL is: " + heightOfTreeUsingLevelOrder(root));
 	}
 	
+//	private static int heightOfTree(BinaryNode root) {
+//		
+//		if(root==null) {
+//			return 0;
+//		}
+//
+//		int left = heightOfTree(root.left);
+//		int right = heightOfTree(root.right);
+//		int max = (left>right? left:right);
+//		// height of left/right subtree + 1 for the node itself
+//		return max+1;
+//	}
+	
 	private static int heightOfTree(BinaryNode root) {
-		
-		if(root==null) {
+		if(root == null) {
 			return 0;
 		}
+		
+		return Math.max(heightOfTree(root.left), heightOfTree(root.right)) + 1;
 
-		int left = heightOfTree(root.left);
-		int right = heightOfTree(root.right);
-		int max = (left>right? left:right);
-		// height of left/right subtree + 1 for the node itself
-		return max+1;
 	}
 
 	private static int heightOfTreeUsingLevelOrder(BinaryNode root) {
