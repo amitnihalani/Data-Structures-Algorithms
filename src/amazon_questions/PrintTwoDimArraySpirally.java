@@ -48,17 +48,7 @@ public class PrintTwoDimArraySpirally {
 		}
 	}
 
-	private static void printRow(int[][] a, int rowNumber, int level) {
-		for (int col = level; col < a.length - level; col++) {
-			System.out.print(a[rowNumber][col] + " ");
-		}
-	}
-
-	private static void printCol(int[][] a, int colNumber, int level) {
-		for (int row = level; row < a[0].length - level; row++) {
-			System.out.print(a[row][colNumber] + " ");
-		}
-	}
+	
 
 	private static int[][] createTwoDimensionalSquareArray(int length) {
 		int[][] twoDimArray = new int[length][length];

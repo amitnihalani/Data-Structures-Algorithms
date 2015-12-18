@@ -21,6 +21,10 @@ public class ReverseHalfLinkedList {
 		while (fast != null) {
 			prev = slow;
 			slow = slow.next;
+			if(fast.next == null) {
+				fast = fast.next;
+				continue;
+			}
 			fast = fast.next.next;
 		}
 

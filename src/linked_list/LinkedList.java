@@ -11,7 +11,7 @@ public class LinkedList {
 		addNodeAtEnd(head, new Node(6));
 		addNodeAtEnd(head, new Node(7));
 		addNodeAtEnd(head, new Node(8));
-		addNodeAtEnd(head, new Node(9));
+//		addNodeAtEnd(head, new Node(9));
 		addNodeAtEnd(head, new Node(10));
 
 		return head;

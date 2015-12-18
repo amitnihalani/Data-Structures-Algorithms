@@ -47,7 +47,7 @@ public class ShortestJobFirst {
 			waitTime += currentTime - request.get(i);
 			// execute the full job and update current time
 			currentTime = currentTime + exec.get(i);
-			// as soon as job is done, remove the job from list using its index i
+			// as soon as job is done, remove the job from both lists using its index i
 			exec.remove(i);
 			request.remove(i);
 		
