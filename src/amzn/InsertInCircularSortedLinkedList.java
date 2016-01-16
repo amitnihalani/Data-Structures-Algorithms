@@ -11,11 +11,12 @@ public class InsertInCircularSortedLinkedList {
 		System.out.println("Origianl List: ");
 		printCircularLL(head);
 		System.out.println("\n\n After Insertion");
-		Node h = insertInSortedCircularLL(head, 5);
+		Node h = insertInSortedCircularLL(head, 12);
 
 		printCircularLL(h);
 	}
 
+	
 	private static Node insertInSortedCircularLL(Node head, int val) {
 		Node current = head;
 		Node newNode = new Node(val);
@@ -37,13 +38,26 @@ public class InsertInCircularSortedLinkedList {
 			if(val>=current.val || val<=current.next.val){
 				newNode.next = current.next;
 				current.next = newNode;
+				return head;
 			} 
+			
+			current = current.next;
+			// if it is in the second sorted half of the list
+			while(current.val < current.next.val) {
+				if(val <= current.next.val ) {
+					newNode.next = current.next;
+					current.next = newNode;
+					return head;
+				}
+				current = current.next;
+			}
 		}
 		return head;
 	}
 
+
 	private static Node generateSortedLL() {
-//		Node head = new Node(6);
+		//Node head = new Node(6);
 //		head.next = new Node(8);
 //		head.next.next = new Node(10);
 //		head.next.next.next = new Node(2);

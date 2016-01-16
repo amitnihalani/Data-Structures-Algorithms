@@ -16,8 +16,8 @@ public class MaxSumPath {
 		BinaryNode root = BinaryTree.generateRandomBinaryTree();
 		LevelOrderTraversal.printLevelOrderTraversal(root);
 		
-//		int[] path = returnMaxSumPath(root, new int[20], new int[20], 0, 0, 0);
-		//System.out.println("\n \n" + findMinimumSumOfPath( root, new ArrayList<BinaryNode>()));
+		int[] path = returnMaxSumPath(root, new int[20], new int[20], 0, 0, 0);
+		System.out.println("\n \n" + path.toString());
 		maxSum(root, 0);
 		System.out.println("\n \n");
 		path(root, maxLeaf);
@@ -50,24 +50,24 @@ public class MaxSumPath {
 			return false;
 	}
 	
-//	private static int[] returnMaxSumPath(BinaryNode root, int[] path, int[] finalPath, int sum, int max, int len){
-//		if(root == null) {
-//			return finalPath;
-//		}
-//		sum=sum+root.value;
-//		path[len++]=(root.value);
-//		
-//		if(root.left==null && root.right==null){
-//			if(sum>max){
-//				max=sum;
-//				finalPath = path;
-//			}
-//		}
-//		
-//	returnMaxSumPath(root.left, path, finalPath, sum, max, len);
-//	 returnMaxSumPath(root.right, path, finalPath, sum, max, len);
-//		
-//		return finalPath;
-//	}
+	private static int[] returnMaxSumPath(BinaryNode root, int[] path, int[] finalPath, int sum, int max, int len){
+		if(root == null) {
+			return finalPath;
+		}
+		sum=sum+root.value;
+		path[len++]=(root.value);
+		
+		if(root.left==null && root.right==null){
+			if(sum>max){
+				max=sum;
+				finalPath = path;
+			}
+		}
+		
+	returnMaxSumPath(root.left, path, finalPath, sum, max, len);
+	 returnMaxSumPath(root.right, path, finalPath, sum, max, len);
+		
+		return finalPath;
+	}
 	
 }
